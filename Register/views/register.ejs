@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<section class="main">
+    <form action="/auth/register" method="post">
+        <div class="input-block">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name">
+        </div>
+        <div class="input-block">
+            <label for="lastname">Lastname</label>
+            <input id="lastname" type="text" name="lastname">
+        </div>
+        <div class="input-block">
+            <label for="age">Age</label>
+            <input id="age" type="number" name="age">
+        </div>
+        <div class="input-block">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email">
+        </div>
+        <div class="input-block">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password">
+        </div>
+
+        <div class="input-block">
+            <input class="submit-button" type="submit">
+        </div>
+        <a href="/auth/login">Sing In</a>
+    </form>
+    <%
+    if(typeof errors !== 'undefined'){
+    errors.forEach((error) => {
+    %>
+        <div style="color: red;"><%= error %></div>
+    <%
+    })
+    }
+    %>
+</section>
+
+</body>
+</html>
